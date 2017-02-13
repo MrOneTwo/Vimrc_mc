@@ -165,3 +165,5 @@ autocmd FileType javascript,php,c map <leader>ccb
     \ I//         <Esc>A         //<Esc>yyp0ellv$hhhhr-yykPjj
 autocmd FileType javascript,php,c map <leader>ccl
     \ I// -<Esc>vy32pa <Esc>l
+autocmd FileType python map <leader>ccb
+    \ I""" <Esc>o"""<Esc>
