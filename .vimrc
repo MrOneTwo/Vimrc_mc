@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 set laststatus=2
 Plugin 'airblade/vim-gitgutter'
+Plugin 'sjl/badwolf'
 " Plugin 'scrooloose/nerdcommenter'
 
 
