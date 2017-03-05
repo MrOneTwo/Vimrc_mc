@@ -23,7 +23,8 @@ sleep 1s
 sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
-    python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
+    python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git \
+    ncurses-dev
 
 echo -e "${LBLUE}Remove old vim thingies..."
 sleep 3s
@@ -60,9 +61,9 @@ if [ "$should_continue" = true ] ; then
     echo -e "${LBLUE}Seems OK, continuing in 3s.${NC}"
     sleep 3s
 else
-    echo -e "${LBLUE}Doesn't seem OK. Abort? [y/n].${NC}"
+    echo -e "${LBLUE}Doesn't seem OK. Continue? [y/n].${NC}"
     read should_continue
-    if [ "$should_continue" == 'y' ]; then
+    if [ "$should_continue" == 'n' ]; then
         exit 1
     fi
 fi
