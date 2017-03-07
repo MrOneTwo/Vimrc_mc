@@ -1,7 +1,3 @@
-set nocompatible
-filetype off
-
-
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -14,12 +10,30 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'vim-airline/vim-airline'
 set laststatus=2
-Plugin 'airblade/vim-gitgutter'
-Plugin 'sjl/badwolf'
-" Plugin 'scrooloose/nerdcommenter'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
 
+Plugin 'airblade/vim-gitgutter'
+
+
+" ---------------------------- SNIPPETS
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" ----------------------------
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -93,11 +107,12 @@ command! MakeTags !ctags -R .
 
 " Tweaks for browsing
 let g:netrw_banner=0        " disable annoying banner
-let g:netrw_browse_split=3  " open in new tab
+" let g:netrw_browse_split=3  " open in new tab
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_preview = 1
 
 " NOW WE CAN:
 " - :edit a folder to open a file browser
@@ -106,7 +121,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 
 " SNIPPETS:
-  
+
 " Read an empty HTML template and move cursor to title
 nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 
@@ -122,7 +137,7 @@ nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 
 " Configure the `make` command to run RSpec
 set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
- 
+
 " NOW WE CAN:
 " - Run :make to run RSpec
 " - :cl to list errors
@@ -163,8 +178,7 @@ nnoremap k gk
 
 " let mapleader=","
 autocmd FileType javascript,php,c map <leader>ccb
-    \ I//         <Esc>A         //<Esc>yyp0ellv$hhhhr-yykPjj
+    \ I//            <Esc>A //<Esc>yyp0ellv$hhhhr-yykPjj
 autocmd FileType javascript,php,c map <leader>ccl
     \ I// -<Esc>vy32pa <Esc>l
-autocmd FileType python map <leader>ccb
-    \ I""" <Esc>o"""<Esc>
+
