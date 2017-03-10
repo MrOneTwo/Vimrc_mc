@@ -17,6 +17,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 
 Plugin 'airblade/vim-gitgutter'
+Plugin 'sjl/badwolf'
 
 
 " ---------------------------- SNIPPETS
@@ -181,4 +182,23 @@ autocmd FileType javascript,php,c map <leader>ccb
     \ I//            <Esc>A //<Esc>yyp0ellv$hhhhr-yykPjj
 autocmd FileType javascript,php,c map <leader>ccl
     \ I// -<Esc>vy32pa <Esc>l
+autocmd FileType ledger map <leader>d
+    \ :r! date "+\%Y/\%m/\%d"<CR>
+autocmd FileType ledger map <leader>Fh
+    \ :r! date "+\%Y/\%m/\%d"<CR>
+    \ o    Assets:PLN                                       -0.00 PLN<CR>
+    \    Expenses:Food:Home                                0.00 PLN<Esc>
+
+" those snippets require that ledger file has line in it:
+" /* vim: set filetype=ledger : */
+autocmd FileType ledger map <leader>fh
+    \ yypk
+    \ I    Assets:PLN                                       <Esc>li-<Esc>A PLN<Esc>
+    \ o    Expenses:Food:Home                                <Esc>kddpkJA PLN<Esc>kkk
+    \ :r! date "+\%Y/\%m/\%d"<CR>A * Food for home<Esc>jjj
+autocmd FileType ledger map <leader>fw
+    \ yypk
+    \ I    Assets:PLN                                       <Esc>li-<Esc>A PLN<Esc>
+    \ o    Expenses:Food:Work                                <Esc>kddpkJA PLN<Esc>kkk
+    \ :r! date "+\%Y/\%m/\%d"<CR>A * Food at work<Esc>jjj
 
