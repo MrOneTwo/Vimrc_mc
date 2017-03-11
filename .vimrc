@@ -201,4 +201,9 @@ autocmd FileType ledger map <leader>fw
     \ I    Assets:PLN                                       <Esc>li-<Esc>A PLN<Esc>
     \ o    Expenses:Food:Work                                <Esc>kddpkJA PLN<Esc>kkk
     \ :r! date "+\%Y/\%m/\%d"<CR>A * Food at work<Esc>jjj
+autocmd FileType ledger map <leader>ztm
+    \ yypk
+    \ I    Assets:PLN                                       <Esc>li-<Esc>A PLN<Esc>
+    \ o    Expenses:ZTM                                      <Esc>kddpkJA PLN<Esc>kkk
+    \ :r! date "+\%Y/\%m/\%d"<CR>A * ZTM<Esc>jjj
 
