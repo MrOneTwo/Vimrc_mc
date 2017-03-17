@@ -18,6 +18,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'sjl/badwolf'
+Plugin 'godlygeek/tabular'
+Plugin 'easymotion/vim-easymotion'
 
 
 " ---------------------------- SNIPPETS
@@ -176,6 +178,14 @@ set backspace=indent,eol,start
 inoremap jk <esc>
 nnoremap j gj
 nnoremap k gk
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <silent> + :exe "vertical resize +1"<CR>
+nnoremap <silent> - :exe "vertical resize -1"<CR>
 
 " let mapleader=","
 autocmd FileType javascript,php,c map <leader>ccb
