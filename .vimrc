@@ -1,5 +1,14 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Michal Ciesielski Vimrc configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible              " be iMproved, required
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" START Vundle Configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Disable file type for vundle
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -20,6 +29,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'sjl/badwolf'
 Plugin 'godlygeek/tabular'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'majutsushi/tagbar'
 
 
 " ---------------------------- SNIPPETS
@@ -59,7 +69,6 @@ filetype plugin indent on    " required
 " enable syntax and plugins (for netrw)
 syntax enable
 filetype plugin on
-
 
 " FINDING FILES:
 
@@ -146,7 +155,15 @@ set makeprg=bundle\ exec\ rspec\ -f\ QuickfixFormatter
 " - :cl to list errors
 " - :cc# to jump to error by number
 " - :cn and :cp to navigate forward and back
-"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Configuration section
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Disable arrow keys
+let g:elite_mode=1
+
 " Show commands in right bot corner
 set showcmd
 
@@ -175,6 +192,12 @@ set foldnestmax=10
 " backspace over everything in insert mode
 set backspace=indent,eol,start
 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" My key rebinds
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 inoremap jk <esc>
 nnoremap j gj
 nnoremap k gk
@@ -186,6 +209,14 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <silent> + :exe "vertical resize +1"<CR>
 nnoremap <silent> - :exe "vertical resize -1"<CR>
+
+map <C-m> :TagbarOpenAutoClose<CR>
+map <C-S-m> :TagbarToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" My snippets
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " let mapleader=","
 autocmd FileType javascript,php,c map <leader>ccb
