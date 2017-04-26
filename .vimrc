@@ -211,7 +211,7 @@ nnoremap <silent> + :exe "vertical resize +1"<CR>
 nnoremap <silent> - :exe "vertical resize -1"<CR>
 
 map <C-m> :TagbarOpenAutoClose<CR>
-map <C-S-m> :TagbarToggle<CR>
+" map <C-S-m> :TagbarToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
