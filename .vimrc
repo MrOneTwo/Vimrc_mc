@@ -31,6 +31,29 @@ Plugin 'godlygeek/tabular'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'majutsushi/tagbar'
 
+Plugin 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+Plugin 'scrooloose/nerdcommenter'
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+Plugin 'tpope/vim-surroung'
+
+Plugin 'junegunn/fzf', {'dir': '~/.fzf', 'do': '/.install --all' }
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/limelight.vim'
+
+Plugin 'tpope/vim-fugitive'
+
+
 
 " ---------------------------- SNIPPETS
 " Track the engine.
@@ -198,6 +221,7 @@ set backspace=indent,eol,start
 """ My key rebinds
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" let mapleader=","
 inoremap jk <esc>
 nnoremap j gj
 nnoremap k gk
@@ -213,12 +237,15 @@ nnoremap <silent> - :exe "vertical resize -1"<CR>
 map <C-m> :TagbarOpenAutoClose<CR>
 " map <C-S-m> :TagbarToggle<CR>
 
+map <leader>o :Files<CR>
+map <leader>b :Buffers<CR>
+map <leader>l :Lines<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 """ My snippets
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" let mapleader=","
 autocmd FileType javascript,php,c map <leader>ccb
     \ I//            <Esc>A //<Esc>yyp0ellv$hhhhr-yykPjj
 autocmd FileType javascript,php,c map <leader>ccl
