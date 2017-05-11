@@ -45,7 +45,7 @@ Plugin 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 
-Plugin 'tpope/vim-surroung'
+Plugin 'tpope/vim-surround'
 
 Plugin 'junegunn/fzf', {'dir': '~/.fzf', 'do': '/.install --all' }
 Plugin 'junegunn/fzf.vim'
