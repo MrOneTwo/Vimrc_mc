@@ -52,6 +52,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/limelight.vim'
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'vimwiki/vimwiki'
 
 
 
