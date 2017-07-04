@@ -289,6 +289,13 @@ let g:tagbar_type_gdscript = {
             \'f:functions',
             \]
             \}
+" tab indentation
+autocmd BufRead,BufNewFile   *.gd noexpandtab
+autocmd BufRead,BufNewFile   *.gd copyindent
+autocmd BufRead,BufNewFile   *.gd preserveindent
+autocmd BufRead,BufNewFile   *.gd softtabstop=0
+autocmd BufRead,BufNewFile   *.gd shiftwidth=4
+autocmd BufRead,BufNewFile   *.gd tabstop=4
 
 
 " calculator function for lines (selected in visual mode) like:
